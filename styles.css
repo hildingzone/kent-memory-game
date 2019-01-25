@@ -1,0 +1,280 @@
+            body {
+                font-family: itc-avant-garde-gothic-pro, century-gothic, sans-serif;
+                margin: auto;
+                text-align: center;
+                background-color: #000;
+                color: #22B2F0;
+            }
+            
+            h1 {
+                font-weight: 100;
+                font-size: 30px;
+                margin-bottom: 8px;
+                margin-top: -8px;
+            }
+            
+            h2 {
+                font-weight: 100;
+                font-size: 20px;
+                font-style: italic;
+            }
+            
+            h4 {
+                display: inline-block;
+            }
+            
+            p {
+                font-style: normal;
+                font-weight: 300;
+                margin-top: -15px;
+                line-height: 1.6em;
+            }
+            
+            .headgame {
+                font-weight: 100;
+                font-size: 19px;
+                text-align: center;
+                font-style: italic;
+            }
+            
+            #content {
+                background-color: black;
+                border-radius: 5px;
+                margin: auto;
+                text-align: center;
+                width: 60%;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            
+            .startgamebutton {
+                background-color: #1DC3E6;
+                font-size: 30px;
+                color: white;
+                width: 66%;
+                margin: 0 auto;
+                padding: 10px 40px 10px 40px;
+                border: none;
+                cursor: pointer;
+                border-radius: 20px;
+                outline: 0;
+                box-shadow: 0px 0px 9px 4px #22B2F0;
+                animation: glow 1.5s linear infinite alternate;
+                font-weight: 100;
+                transition: .2s ease;
+            }
+            
+            @keyframes glow {
+                to {
+                    box-shadow: 0px 0px 30px 20px rgb(32, 36, 150);
+                }
+            }
+            
+            .startgamebutton:hover {
+                background-color: black;
+                transition: 0.9s;
+                color: white;
+                border: none;
+            }
+            
+            #contentGame {
+                margin: 0 auto;
+                margin-top: 59px;
+                margin-bottom: 100px;
+            }
+            
+            .cardContainer {
+                display: grid;
+                grid-template-columns: repeat(6, 150px);
+                grid-gap: 15px;
+                justify-items: center;
+                justify-content: center;
+            }
+            
+            .card {
+                height: 120px;
+                width: 120px;
+                border-radius: 1px;
+                background-size: cover;
+                padding: 5px;
+            }
+            
+            .selectedCard {
+                transform: rotateY(-180deg);
+                transform: rotateX(-360deg);
+                box-shadow: 0px 0px 9px 4px #22B2F0;
+            }
+            
+            .flipBack {
+                color: white;
+                transition: all 0.77s ease-out;
+            }
+            
+            .card:hover {
+                transition: all 0.3s ease-out;
+            }
+            
+            .bg {
+                width: 120px;
+                height: 0px;
+                border: 1px white solid;
+                border-radius: 1px;
+                padding: 5px 5px 125px 5px;
+                background-image: url('images/ros.jpg');
+                background-size: cover;
+            }
+            
+            .backButton {
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 7px;
+                background-color: #1DC3E6;
+                border: none;
+                font-size: 1em;
+                margin-left: 15px;
+            }
+            
+            #gametimer {
+                margin: 77px 0px -110px 0px;
+                font-size: 21px;
+                color: #b3eaff;
+            }
+            
+            .wonCards {
+                -webkit-transition: opacity 1.2s ease-in-out;
+                -moz-transition: opacity 1.2s ease-in-out;
+                -ms-transition: opacity 1.2s ease-in-out;
+                -o-transition: opacity 1.2s ease-in-out;
+                opacity: 0;
+            }
+            
+            .noTarget {
+                pointer-events: none
+            }
+            
+            #message {
+                height: 50px;
+                margin-bottom: -63px;
+                margin-top: 158px;
+            }
+            
+            #finishedGame {
+                background-color: #1DC3E6;
+                font-size: 30px;
+                color: white;
+                padding: 10px 40px 10px 40px;
+                border: none;
+                border-radius: 20px;
+                outline: 0;
+                box-shadow: 0px 0px 9px 4px #22B2F0;
+                animation: glow 1.5s linear infinite alternate;
+                font-weight: 100;
+                transition: .2s ease;
+                display: inline-block;
+                margin-bottom: 60px;
+            }
+            
+            @keyframes glow {
+                to {
+                    box-shadow: 0px 0px 30px 20px rgb(32, 36, 150);
+                }
+            }
+            
+            #finishedGamemenu {
+                background-color: #1DC3E6;
+                font-size: 20px;
+                color: white;
+                padding: 10px 40px 10px 40px;
+                border: none;
+                border-radius: 20px;
+                outline: 0;
+                box-shadow: 0px 0px 9px 4px #22B2F0;
+                font-weight: 100;
+                transition: .2s ease;
+                display: inline-block;
+                margin-top: 30px;
+                margin-bottom: 60px;
+            }
+            
+            #finishedGamemenu:hover {
+                transition: .2s ease;
+                cursor: pointer;
+            }
+            
+            #showPoints {
+                margin: 55px 0px -100px 0px;
+                font-size: 19px;
+                color: #22b2f0;
+            }
+            
+            .topbar {
+                background-color: rgb(28, 28, 28);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 5px 0px 5px 0px;
+            }
+            
+            a:link {
+                text-decoration: none;
+                color: white;
+            }
+            
+            a:visited {
+                color: white;
+            }
+            
+            @media only screen and (max-width: 600px) {
+                .card {
+                    width: 50px;
+                    height: 50px;
+                    padding: 13px;
+                }
+                .topbar {
+                    display: none;
+                }
+                #finishedGame,
+                #finishedGamemenu {
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                }
+                img {
+                    width: 50%;
+                }
+                #gametimer {
+                    margin: 45px 0px -105px 0px;
+                    font-size: 22px;
+                    color: #b3eaff;
+                }
+                #showPoints {
+                    margin: 51px 0px -123px 0px;
+                }
+                .bg {
+                    width: 50px;
+                    height: 0px;
+                    border: 1px white solid;
+                    border-radius: 1px;
+                    padding: 5px 5px 50px 5px;
+                    background-image: url('images/ros.jpg');
+                    background-size: cover;
+                    margin: 10px;
+                }
+                #board {
+                    margin: 0 auto;
+                    width: 50%;
+                }
+                .cardContainer {
+                    display: grid;
+                    grid-template-columns: repeat(4, 60px);
+                    grid-gap: 8px;
+                    justify-items: center;
+                    justify-content: center;
+                    grid-template-rows: repeat(6, 53px);
+                }
+                .selectedCard {
+                    box-shadow: none;
+                }
+            }
