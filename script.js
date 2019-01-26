@@ -50,20 +50,19 @@ const allCards = [{
     },
 ];
 
-// Spara spelplan i variabel och placera ut kortbehållare
+// Create board and card holder
 const board = document.getElementById('board');
 const cardContainer = document.createElement('div');
 cardContainer.setAttribute('class', 'cardContainer');
 board.appendChild(cardContainer);
 
-// Skapa kopior av varje kort
+// Create a copy of every card
 var allCardsCopy = allCards;
 const doubleImg = allCards.concat(allCardsCopy);
 
-// Blanda korten innan de skrivs ut
 shuffle(doubleImg);
 
-// Skriv ut kortens framsidor med respektive bild och tilldela dem klass
+// Create cards
 doubleImg.forEach(item => {
     var card = document.createElement('img');
     card.classList.add('bg');
@@ -74,7 +73,7 @@ doubleImg.forEach(item => {
     cardContainer.appendChild(card);
 })
 
-// Funktion som blandar alla kort
+// Shuffle all cards
 function shuffle(array) {
     for (let i = 0; i < doubleImg.length; i++) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -83,7 +82,7 @@ function shuffle(array) {
     return array;
 }
 
-// Gör två kort klickbara 
+// Make two cards clickable 
 var flippedCards = 0;
 var guessOne = '';
 var guessTwo = '';
@@ -94,15 +93,14 @@ function gameReset() {
     guessOne, guessTwo = '';
 }
 
-// Poäng och meddelande
+// Points and message if you got it right or wrong
 var message = document.getElementById("message");
 var displayPoints = document.getElementById("points");
 displayPoints.innerHTML = points;
 
 cardContainer.addEventListener('click', function(event) {
     let clickedCard = event.target;
-    clickedCard.classList.remove('bg'); // flip
-    // Undvik klick på spelplan och vunna kort
+    clickedCard.classList.remove('bg'); 
     if (clickedCard.dataset.value == undefined ||  clickedCard.classList.contains("wonCards")) {
         return;
     }
@@ -112,7 +110,7 @@ cardContainer.addEventListener('click', function(event) {
     }
     if (flippedCards == 1) {
         guessOne = clickedCard.dataset.value;
-        clickedCard.classList.add('noTarget'); // Gör att bilden ej är klickbar igen
+        clickedCard.classList.add('noTarget'); 
     }
     if (flippedCards == 2) {
         var selections = document.querySelectorAll('.selectedCard');
@@ -136,7 +134,7 @@ cardContainer.addEventListener('click', function(event) {
                     card.classList.remove('selectedCard');
                     card.classList.add('flipBack');
                     gameReset();
-                    card.classList.remove('noTarget'), cardContainer.classList.remove('noTarget'); // Gör bilder klickbara igen
+                    card.classList.remove('noTarget'), cardContainer.classList.remove('noTarget'); 
                     message.innerHTML = '';
                 }, 2000);
                 setTimeout(function() {
@@ -163,6 +161,7 @@ var timeTick = setInterval(function() {
         document.querySelector(".topbar").style.backgroundColor = "black";
         document.getElementById("showPoints").style.display = "none";
 
+       
         clearInterval(timeTick);
     }
 
